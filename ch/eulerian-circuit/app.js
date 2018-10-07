@@ -11,6 +11,7 @@ var problems = [
 
   {
     "order": 6,
+    "coords": [ [378, 275], [249, 295], [307, 149], [374, 47], [443, 163], [492, 268] ],
     "links": [ [0,1], [1,2], [2,3], [3,4], [4,5], [5,0], [0,2], [2,4], [4,0] ]
   },
 
@@ -26,6 +27,7 @@ var problems = [
 
   {
     "order": 6,
+    "coords": [ [246, 240], [468, 216], [398, 299], [302, 308], [361, 189], [343, 128] ],
     "links": [ [0,5], [5,1], [0,2], [0,3], [0,4], [1,2], [1,3], [1,4], [2,3], [2,4], [3,4] ]
   }
 
@@ -41,17 +43,12 @@ var w = univSvgWidth ? univSvgWidth : 616,
     h = univSvgHeight ? univSvgHeight : 400,
     rad = 14;
 
-positionNodes();
 setWalkDegree();
 
 var svg = d3.select("#svg-wrap")
             .append("svg")
             .attr("width", w)
             .attr("height", h);
-
-var dragLine = svg.append("path")
-									.attr("class", "dragLine hidden")
-									.attr("d", "M0,0L0,0");
 
 var edges = svg.append("g")
 								.selectAll(".edge");
@@ -158,13 +155,8 @@ function restart(){
         .append("line")
         .attr("class","edge")
         .on("click", extendWalk)
-        .on("mouseover", function(d){
-        	var thisEdge = d3.select(this);
-          if(thisEdge.select("title").empty()){
-            thisEdge.append("title")
-        		        .text("v"+d.source.id+"-v"+d.target.id);
-          }
-        });
+        .append("title")
+        .text(function(d){return "v"+d.source.id+"-v"+d.target.id;});
 
   edges.exit().remove();
 
@@ -181,26 +173,23 @@ function restart(){
     .style("fill", function(d){
       return colors(d.id);
     })
-    .on("mouseover", function(d){
-    	var thisVertex = d3.select(this);
-      if(thisVertex.select("title").empty()){
-        thisVertex.append("title")
-    		          .text("v"+d.id);
-      }
+    .append("title")
+    .text(function(d){
+      return "v"+d.id;
     });
 
   g.append("text")
     .attr("x", 0)
     .attr("y", 4)
     .text(function(d){return d.degree;});
-    
+
   vertices.exit().remove();
   force.start();
 }
 
 svg.on("mouseleave", restart)
     .on("contextmenu", function(){d3.event.preventDefault();});
-	  
+
 d3.select(window)
   .on('keydown', keydown)
   .on('keyup', keyup);
@@ -311,13 +300,16 @@ function setGraph(index){
   restart();
   //push nodes and links
   for(var i=0; i<graphToLoad.order; i++){
-    nodes.push({id:i+1, degree:0});
+    if(graphToLoad.coords)
+      nodes.push({id:i+1, degree:0, x:graphToLoad.coords[i][0], y:graphToLoad.coords[i][1]});
+    else
+      nodes.push({id:i+1, degree:0});
   }
   graphToLoad.links.forEach(function(d){
     links.push({source:d[0], target:d[1]});
   });
   lastNodeId = graphToLoad.order;
-  positionNodes();
+  if(!graphToLoad.coords) positionNodes();
   force.start();
   links.forEach(function(d){
     d.source.degree++;
@@ -354,7 +346,7 @@ function setGraph(index){
 function checkAndLoad(){
   if($(".walk-edge").length!=links.length)
     return;
-  //set currentProb as solved 
+  //set currentProb as solved
   paginationLinks.selectAll("a")
                   .each(function(d, i){
                     if(i==currentProb)

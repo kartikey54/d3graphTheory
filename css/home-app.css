@@ -48,18 +48,22 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar {
-	width: 5px;
+	width: 10px;
 	height: 5px;
 	background-color: #F5F5F5;
 }
 
 body::-webkit-scrollbar-thumb {
 	background-color: #1f77b4;
-	/*border: 2px solid #555;*/
 }
 
 #home-container {
 	background-color: #f8f8f8;
+	padding-bottom: 100px;
+}
+
+#home-container > .container {
+		padding-bottom: 40px;
 }
 
 #home-navbar {
@@ -136,24 +140,26 @@ body::-webkit-scrollbar-thumb {
 
 #home-graph {
 	width: 100%;
-	height: 720px;
+	/*height set by home-app.js*/
 	margin: auto;
 }
 
-/*intro must have same width as home-graph*/
-#intro {
+/*intro-container must have same width as home-graph*/
+#intro-container {
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	height: 720px;
+	height: 100%;
 	pointer-events: none;
-	padding: 300px 60px;
 	color: #fff;
 	background-color: rgba(44, 44, 56, 0.5);
 	font-family: "Open Sans", sans-serif;
 	text-align: center;
-	vertical-align: middle;
+}
+
+#intro span {
+	display: inline-block;
 }
 
 #intro-title {
@@ -166,6 +172,67 @@ body::-webkit-scrollbar-thumb {
 	font-size: 20px;
 	font-weight: 300;
 	line-height: 1.2;
+}
+
+#intro-button a {
+	padding:10px 50px;
+	background:transparent;
+	color:#fff;
+	font-size:18px;
+	font-weight: 500;
+	pointer-events: auto;
+	border: 2px solid #fff;
+}
+
+#intro-button a:hover {
+	background: rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+}
+
+#share-wrap-top a {
+	margin-left: 5px;
+	color:#fff;
+	font-size:11px;
+	text-decoration:none;
+	padding:3px 8px;
+	border-radius: 4px;
+}
+
+#share-wrap-top a i {
+	font-size: 1.2em;
+}
+
+#share-wrap-top a:hover {
+	background-color: #888 !important;
+}
+
+.quote-wrap {
+	border-left: 10px solid #CCC;
+	padding: 10px;
+	background: #eaeaea;
+	margin-bottom: 20px;
+}
+
+.quote::before {
+	color: #ccc;
+  content: open-quote;
+  font-size: 3em;
+  line-height: 0.1em;
+  margin-right: 0.1em;
+  vertical-align: -0.4em;
+}
+
+.quote::after {
+	color: #ccc;
+  content: close-quote;
+  font-size: 3em;
+  line-height: 0.1em;
+  margin-left: 0.1em;
+  vertical-align: -0.4em;
+}
+
+.quote-cite {
+	text-align: right;
 }
 
 div.section-heading {
@@ -255,7 +322,7 @@ div.faq-entry {
 }
 
 #content-list .list-item.star-item {
-	background-image: url("../img/star_icon.png");
+	background-image: url("../img/icons/star-icon.png");
 	background-position: right 5px top 5px;
 	background-repeat: no-repeat;
 }
@@ -270,7 +337,7 @@ div.jump-on {
 }
 
 .jump-on a {
-	padding: 20px 40px;
+	padding: 20px 80px;
 	border-radius: 4px;
 	border: 2px solid #1f77b4;
 	word-spacing: 3px;
@@ -285,4 +352,148 @@ div.jump-on {
 .jump-on a:hover {
 	color: #f8f8f8;
 	background-color: #1f77b4;
+}
+
+.grey {
+	color: #888;
+	font-size: 12px;
+	font-family: "Courier New", Courier, monospace;
+}
+
+div.donation {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+a#dbox-donation-button:hover {
+	background-color: #3ea83c !important;
+}
+
+a.donation-button:hover {
+	background-color: #ddd !important;
+}
+
+div.donation-target {
+	width: 320px;
+	padding: 10px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	margin: auto;
+	background: #fff;
+	position: relative;
+}
+
+/*For css arrow on donation-target*/
+/*Taken from http://www.cssarrowplease.com/*/
+.donation-target:after, .donation-target:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.donation-target:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-bottom-color: #fff;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.donation-target:before {
+	border-color: rgba(204, 204, 204, 0);
+	border-bottom-color: #ccc;
+	border-width: 11px;
+	margin-left: -11px;
+}
+/*arrow ends*/
+
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+}
+
+ul.share-buttons li{
+  display: inline;
+}
+
+#share ul.share-buttons li {
+	margin-left: 25px;
+}
+
+#myFooter ul.share-buttons li{
+	margin-left: 15px;
+}
+
+#myFooter {
+    background-color: #272822;
+    color: white;
+    font-size: 14px;
+    line-height: 1.42;
+}
+
+#myFooter .first-bar .row {
+    padding-top: 20px;
+    padding-bottom: 60px;
+}
+
+#myFooter ul {
+    list-style-type: none;
+    padding-left: 0;
+    line-height: 1.7;
+}
+
+#myFooter h5 {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#myFooter a {
+    color: #aaa;
+    text-decoration: none;
+}
+
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: underline;
+}
+
+#myFooter .second-bar {
+    background-color: #33373e;
+}
+
+#myFooter .second-bar .row > div {
+	margin-top: 30px;
+	margin-bottom: 20px;
+	line-height: 40px;
+}
+
+#myFooter .second-bar .logo{
+	font-size: 28px;
+  font-weight: bold;
+  padding-right: 12px;
+  border-right: solid 1px #888;
+  line-height: 30px;
+}
+
+#myFooter .second-bar .logo a{
+    color:white;
+}
+
+#myFooter .second-bar a:hover {
+    text-decoration: none;
+}
+
+#myFooter .second-bar .copyright {
+	padding-left: 8px;
+}
+
+@media screen and (max-width: 991px) {
+    #myFooter .second-bar {
+        text-align: center;
+    }
 }

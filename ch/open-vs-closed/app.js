@@ -1,17 +1,17 @@
 //node ids are in order in which nodes come in existence
 var nodes = [
-            {id:1, degree:5},
-            {id:2, degree:5},
-            {id:3, degree:5},
-            {id:4, degree:5},
-            {id:5, degree:5},
-            {id:6, degree:5},
-            {id:7, degree:5},
-            {id:8, degree:5},
-            {id:9, degree:5},
-            {id:10, degree:5},
-            {id:11, degree:5},
-            {id:12, degree:5}
+            {id:1, degree:5, x:262, y:246},
+            {id:2, degree:5, x:359, y:314},
+            {id:3, degree:5, x:362, y:252},
+            {id:4, degree:5, x:324, y:168},
+            {id:5, degree:5, x:272, y:133},
+            {id:6, degree:5, x:319, y:222},
+            {id:7, degree:5, x:462, y:265},
+            {id:8, degree:5, x:415, y:177},
+            {id:9, degree:5, x:378, y:85},
+            {id:10, degree:5, x:371, y:146},
+            {id:11, degree:5, x:411, y:230},
+            {id:12, degree:5, x:472, y:150},
 ];
 
 var links = [
@@ -25,7 +25,7 @@ var links = [
             {source:3, target:4},
             {source:4, target:5},
             {source:5, target:1},
-            
+
             {source:6, target:1},
             {source:6, target:2},
             {source:7, target:2},
@@ -115,14 +115,12 @@ function clearGraph(){
   restart();
 }
 
-//set initial positions for quick convergence
+//randomize the node positions a bit
+//so it looks cool while loading
 function positionNodes(){
   nodes.forEach(function(d, i) {
-    d.x = d.y = w / lastNodeId * i;
-    /*if(i%2==0)
-      d.x = d.y;
-    else
-      d.x = w - d.y;*/
+    d.x += Math.random()*100 - 50;
+    d.y += Math.random()*100 - 50;
   });
 }
 
@@ -190,13 +188,13 @@ function beginDragLine(d){
 	if(d3.event.ctrlKey || d3.event.button!=0) return;
 	mousedownNode = d;
 	dragLine.classed("hidden", false)
-					.attr("d", "M" + mousedownNode.x + "," + mousedownNode.y + 
+					.attr("d", "M" + mousedownNode.x + "," + mousedownNode.y +
 						"L" + mousedownNode.x + "," + mousedownNode.y);
 }
 
 function updateDragLine(){
 	if(!mousedownNode) return;
-	dragLine.attr("d", "M" + mousedownNode.x + "," + mousedownNode.y + 
+	dragLine.attr("d", "M" + mousedownNode.x + "," + mousedownNode.y +
 									"L" + d3.mouse(this)[0] + "," + d3.mouse(this)[1]);
 }
 
@@ -253,13 +251,8 @@ function restart(){
         .on("mousedown", function(){d3.event.stopPropagation();})
         .on("contextmenu", removeEdge)
         .on("click", extendWalk)
-        .on("mouseover", function(d){
-        	var thisEdge = d3.select(this);
-          if(thisEdge.select("title").empty()){
-            thisEdge.append("title")
-        		        .text("v"+d.source.id+"-v"+d.target.id);
-          }
-        });
+        .append("title")
+        .text(function(d){return "v"+d.source.id+"-v"+d.target.id;});
 
   edges.exit().remove();
 
@@ -281,15 +274,12 @@ function restart(){
     })
     .on("mousedown", beginDragLine)
     .on("mouseup", endDragLine)
-    .on("mouseover", function(d){
-    	var thisVertex = d3.select(this);
-      if(thisVertex.select("title").empty()){
-        thisVertex.append("title")
-    		          .text("v"+d.id);
-      }
-    })
-    .on("contextmenu", removeNode);
-    
+    .on("contextmenu", removeNode)
+    .append("title")
+    .text(function(d){
+      return "v"+d.id;
+    });
+
   vertices.exit().remove();
   force.start();
 }
@@ -428,7 +418,7 @@ function showGraphLatex() {
 
       if(currentVertex.walkDegree>2)
         vertexRep = true;
-      
+
       l += "\\to v_{" + currentVertex.id + "}";
       if((i+1)%10==0)
         l += "\\\\";

@@ -70,15 +70,15 @@ a:hover {
 }
 
 #map-list .current-chap:before {
-	content: "";  
-  border-color: transparent #2ca02c;  
-  border-style: solid;  
-  border-width: 0.35em 0 0.35em 0.45em;  
-  display: inline-block;  
-  height: 0;  
-  width: 0;  
-  left: -12px;  
-  top: 0px;  
+	content: "";
+  border-color: transparent #2ca02c;
+  border-style: solid;
+  border-width: 0.35em 0 0.35em 0.45em;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  left: -12px;
+  top: 0px;
   position: relative;
 }
 
@@ -117,13 +117,17 @@ hr.under-title {
 
 .navbar-brand {
 	color: #1f77b4 !important;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 700;
 }
 
 .navbar-nav {
 	float: right;
-	font-size: 18px;
+	font-size: 16px;
+}
+
+.navbar span.glyphicon-new-window {
+	font-size: 0.8em;
 }
 
 #status-container {
@@ -139,6 +143,16 @@ hr.under-title {
 	text-align: justify;
 }
 
+#theory-area {
+	display: inline-block;
+}
+
+#theory-area svg {
+	display: inline-block;
+	vertical-align: middle;
+	cursor: auto;
+}
+
 div.toggle-container {
 	background: #eee;
 	padding: 10px;
@@ -146,6 +160,7 @@ div.toggle-container {
 	margin-bottom: 20px;
 }
 
+/*text coloring*/
 .toggle-link, .graph-event-link {
 	color: #2ca02c;
 	text-decoration: underline;
@@ -176,16 +191,17 @@ div.result {
 .result-word {
 	color: #2ca02c;
 }
+/*text coloring ends*/
 
 /*To deal with resizing windows*/
-#theory-area, #app-area, #map-list {
+/*app-area isn't needed when disabled max-height*/
+#theory-area, #map-list {
 	overflow-y: auto;
 }
 
 /*scrollbar customization*/
 body::-webkit-scrollbar-track,
 #theory-area::-webkit-scrollbar-track,
-#app-area::-webkit-scrollbar-track,
 #map-list::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
@@ -194,22 +210,20 @@ body::-webkit-scrollbar-track,
 
 body::-webkit-scrollbar,
 #theory-area::-webkit-scrollbar,
-#app-area::-webkit-scrollbar,
 #map-list::-webkit-scrollbar
 {
-	width: 5px;
+	width: 10px;
 	height: 5px;
 	background-color: #F5F5F5;
 }
 
 body::-webkit-scrollbar-thumb,
 #theory-area::-webkit-scrollbar-thumb,
-#app-area::-webkit-scrollbar-thumb,
 #map-list::-webkit-scrollbar-thumb
 {
 	background-color: #1f77b4;
-	/*border: 2px solid #555;*/
 }
+/*scrollbar customizations end*/
 
 #app-interface {
 	margin-top: 30px;
@@ -222,6 +236,10 @@ body::-webkit-scrollbar-thumb,
 
 #svg-wrap svg {
 	border: 1px solid #eee;
+}
+
+#svg-wrap svg text {
+	user-select: none;
 }
 
 #svg-output {
@@ -252,34 +270,58 @@ a.map-flow:hover {
 	float:right;
 }
 
-footer {
-	background: #1f77b4;
-	color: #fff;
+#myFooter {
+    background-color: #272822;
+    color: white;
+    font-size: 14px;
 }
 
-#upper-footer {
-	padding: 30px;
-	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
-	font-weight: 700;
-	line-height: 1.5;
+ul.share-buttons{
+  list-style: none;
+  padding: 0;
+  margin-bottom: 0;
 }
 
-footer a {
-	color: #ff0;
+ul.share-buttons li{
+  display: inline;
+  margin-left: 15px;
 }
 
-footer a:hover {
-	text-decoration: underline;
-	color: #ff0;
+#myFooter a {
+    color: #aaa;
+    text-decoration: none;
 }
 
-#signature {
-	background: #1f77b4;
-	padding: 10px 0;
+#myFooter a:hover,
+#myFooter a:focus {
+    text-decoration: underline;
 }
 
-#signature div {
-	margin: auto;
-	min-width: 270px;
+#myFooter .second-bar .row > div {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	line-height: 32px;
+}
+
+#myFooter .second-bar .logo{
+	font-size: 24px;
+}
+
+#myFooter .second-bar .logo a{
+    color:white;
+}
+
+#myFooter .second-bar .logo a:hover {
+    text-decoration: none;
+}
+
+
+@media screen and (max-width: 991px) {
+    #myFooter .second-bar {
+        text-align: center;
+    }
+
+    #myFooter div.social-icons {
+    	text-align: center;
+    }
 }

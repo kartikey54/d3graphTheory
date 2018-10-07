@@ -1,10 +1,10 @@
-var contentData = 
+var contentData =
 {
 	"vertices-and-edges": {
 
 		"content-title": "Vertices and Edges",
 
-		"theory-content":		"<p>A graph is a collection of vertices interconnected by edges. In the figure, vertices are represented by circles and edges by lines. We denote the set of all vertices by \\(V\\) and set of all edges by \\(E\\).<\/p><p>Got it? Now in easy words: A graph has two components - a <b>set of vertices<\/b> \\(V\\) AND a <b>set of edges<\/b> \\(E\\). Where an edge is something acting as a link between two vertices. Period.<\/p><p>If an edge connects two vertices \\(v_1\\) and \\(v_2\\), then we denote the edge by \\(v_1v_2\\), which is same as \\(v_2v_1\\).<\/p><p>Two vertices are said to be <b>adjacent<\/b> if they are connected by an edge.<\/p><p>Now read the instructions below and create your own graph. You will see the corresponding sets \\(V\\) and \\(E\\) below the graph area. Start playing around and get yourself comfortable with the set notations.<\/p>",
+		"theory-content":		"<div><span style: 'whitespace: nowrap'>A graph is a collection of vertices<\/span><span style: 'whitespace: nowrap'><svg width=30 height=30 xml:space='preserve' style='margin-left: 4; margin-right: 0 position:relative'><g><circle cx='15' cy='15' r='10' fill='#1f77b4'/></g></svg><\/span><span style: 'whitespace: nowrap'><svg width=30 height=30 xml:space='preserve' style='margin-left: 0; margin-right: 0; position:relative'><g><circle cx='15' cy='15' r='10' fill='#ff7f0e'/></g></svg><\/span><span style: 'whitespace: nowrap'><svg width=30 height=30 xml:space='preserve' style='margin-left: 0; margin-right: 4; position:relative'><g><circle cx='15' cy='15' r='10' fill='#2ca02c'/></g></svg><\/span><span style: 'whitespace: nowrap'>interconnected by edges<\/span><span style: 'whitespace: nowrap'><svg width=30 height=30 xml:space='preserve' style='margin-left: 4; margin-right: 0 position:relative'><g><line x1='5' y1='25' x2='25' y2='5' stroke='#888' stroke-width='2px' stroke-linecap='round' stroke-linejoin='round'/></g></svg><\/span><span style: 'whitespace: nowrap'><svg width=30 height=30 xml:space='preserve' style='margin-left: 0; margin-right: 0; position:relative'><g><line x1='5' y1='25' x2='25' y2='5' stroke='#888' stroke-width='2px' stroke-linecap='round' stroke-linejoin='round'/></g></svg><\/span><span style: 'whitespace: nowrap'><svg width=30 height=30 xml:space='preserve' style='margin-left: 0; margin-right: 0; position:relative'><g><line x1='5' y1='25' x2='25' y2='5' stroke='#888' stroke-width='2px' stroke-linecap='round' stroke-linejoin='round'/></g></svg><\/span><span style: 'whitespace: nowrap'>.  We denote the set of all vertices by \\(V\\) and set of all edges by \\(E\\).<\/p><p>Got it? Now in easy words: A graph has two components - a <b>set of vertices<\/b> \\(V\\) AND a <b>set of edges<\/b> \\(E\\). Where an edge is something acting as a link between two vertices. Period.<\/p><p>If an edge connects two vertices \\(v_1\\) and \\(v_2\\), then we denote the edge by \\(v_1v_2\\), which is same as \\(v_2v_1\\).<\/p><p>Two vertices are said to be <b>adjacent<\/b> if they are connected by an edge.<\/p><p>Now read the instructions below and create your own graph. You will see the corresponding sets \\(V\\) and \\(E\\) below the graph area. Start playing around and get yourself comfortable with the set notations.<\/span><\/div>",
 
 		"interface-title":		"App interface:",
 
@@ -17,7 +17,7 @@ var contentData =
 		"prev":		"index.html",
 		"next":		"?order-and-size",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -38,7 +38,7 @@ var contentData =
 		"prev":		"?vertices-and-edges",
 		"next":		"?degree-of-vertex",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -59,7 +59,7 @@ var contentData =
 		"prev":		"?order-and-size",
 		"next":		"?degree-sequence",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -80,7 +80,7 @@ var contentData =
 		"prev":		"?degree-of-vertex",
 		"next":		"?graphic-sequence",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -88,7 +88,7 @@ var contentData =
 
 		"content-title": "Graphic Sequence",
 
-		"theory-content":		"<p>A sequence of numbers is said to <b>graphic sequence<\/b> if we can construct a graph having the sequence as its degree sequence. <\/p><p> Okay, that was a bit confusing. So what's a graphic sequence again? <\/p><p> Let's say you have a list of numbers. Assign each number to an isolated vertex. Now, can you connect these vertices in a way that each vertex is adjacent to as many vertices as the number assigned to it? If yes, then the list of numbers is graphic. Otherwise not. Things will be clear in a while. <\/p><p> <b>Example 1:<\/b> The sequence \\((3,3,2,1,1,0)\\) is graphic. In the diagram, you can see the vertices have these numbers as their degrees. Notice that the sequence remains graphic even when you remove the \\(0\\). <\/p><div class=\"note\"> <span class=\"note-word\">Note:<\/span> A sequece containing only zeroes is always graphic. <\/div><p> <b>Example 2:<\/b> The sequence \\((4,3,2,1)\\) is not graphic. We need at least four other vertices to satisfy the degree of the vertex having \\(4\\) as its degree. But we have only three. <\/p><p> <b>Example 3:<\/b> The sequence \\((4,3,3,2,2,1)\\) is not graphic. Recall that sum of degrees is <b>twice<\/b> the number of edges. So sum of a graphic sequence must be even. This isn't the case here. <\/p><p> The following sequences are graphic. Try to draw a graph for each one of them. You can see the answer by clicking the link next to them. <\/p><p> \\((5,1,1,1,1,1)\\) <span class=\"graph-event-link\" id=\"prob0\"> Show solution<\/span> <\/p><p> \\((2,2,2,2,2)\\) <span class=\"graph-event-link\" id=\"prob1\"> Show solution<\/span> <\/p><p> \\((4,4,4,4,4,0)\\) <span class=\"graph-event-link\" id=\"prob2\"> Show solution<\/span> <\/p><p> \\((3,3,2,2,2)\\) <span class=\"graph-event-link\" id=\"prob3\"> Show solution<\/span> <\/p><p> \\((5,3,3,3,2,2)\\) <span class=\"graph-event-link\" id=\"prob4\"> Show solution<\/span> <\/p><div class=\"note\"> <span class=\"note-word\">Note:<\/span> A graph has a unique degree sequence. But more than one different graphs might be possible for the same graphic sequence. <\/div>",
+		"theory-content":		"<p>A sequence of numbers is said to be a <b>graphic sequence<\/b> if we can construct a graph having the sequence as its degree sequence. <\/p><p> Okay, that was a bit confusing. So what's a graphic sequence again? <\/p><p> Let's say you have a list of numbers. Assign each number to an isolated vertex. Now, can you connect these vertices in a way that each vertex is adjacent to as many vertices as the number assigned to it? If yes, then the list of numbers is graphic. Otherwise not. Things will be clear in a while. <\/p><p> <b>Example 1:<\/b> The sequence \\((3,3,2,1,1,0)\\) is graphic. In the diagram, you can see the vertices have these numbers as their degrees. Notice that the sequence remains graphic even when you remove the \\(0\\). <\/p><div class=\"note\"> <span class=\"note-word\">Note:<\/span> A sequence containing only zeroes is always graphic. <\/div><p> <b>Example 2:<\/b> The sequence \\((4,3,2,1)\\) is not graphic. We need at least four other vertices to satisfy the degree of the vertex having \\(4\\) as its degree. But we have only three. <\/p><p> <b>Example 3:<\/b> The sequence \\((4,3,3,2,2,1)\\) is not graphic. Recall that sum of degrees is <b>twice<\/b> the number of edges. So sum of a graphic sequence must be even. This isn't the case here. <\/p><p> The following sequences are graphic. Try to draw a graph for each one of them. You can see the answer by clicking the link next to them. <\/p><p> \\((5,1,1,1,1,1)\\) <span class=\"graph-event-link\" id=\"prob0\"> Show solution<\/span> <\/p><p> \\((2,2,2,2,2)\\) <span class=\"graph-event-link\" id=\"prob1\"> Show solution<\/span> <\/p><p> \\((4,4,4,4,4,0)\\) <span class=\"graph-event-link\" id=\"prob2\"> Show solution<\/span> <\/p><p> \\((3,3,2,2,2)\\) <span class=\"graph-event-link\" id=\"prob3\"> Show solution<\/span> <\/p><p> \\((5,3,3,3,2,2)\\) <span class=\"graph-event-link\" id=\"prob4\"> Show solution<\/span> <\/p><div class=\"note\"> <span class=\"note-word\">Note:<\/span> A graph has a unique degree sequence. But more than one different graphs might be possible for the same graphic sequence. <\/div>",
 
 		"interface-title":		"App interface:",
 
@@ -101,7 +101,7 @@ var contentData =
 		"prev":		"?degree-sequence",
 		"next":		"?havel-hakimi",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -122,7 +122,7 @@ var contentData =
 		"prev":		"?graphic-sequence",
 		"next":		"?pigeonhole",
 		"script":	"app.js",
-		"star":	"y",
+		"star":		"y",
 		"style":	"app.css"
 	},
 
@@ -130,7 +130,7 @@ var contentData =
 
 		"content-title": "Pigeonhole Principle",
 
-		"theory-content":		"<p> Pigeonhole principle is very simple and intuitive, but its applications in discrete mathematics are surprisinly frequent. <\/p><div class=\"result\"> <span class=\"result-word\">Pigeonhole Principle: <\/span> If we put \\(n\\) pigeons in less than \\(n\\) pigeonholes, then at least one pigeonhole contains more than one pigeons. <\/div><p> You can replace <i>pigeons<\/i> by <i>items<\/i> and <i>pigeonholes<\/i> by <i>boxes<\/i>. So the principle says that if we have more items and less boxes, and we distribute all the items in these boxes, then at least one box will have more than one items. <\/p><p> The hard part is to apply this theorem. You will have to decide what objects represent your pigeons and pigeonholes. <\/p><p> <b>Example 1: <\/b> Did you notice that there are only ten different colors of vertices in these lessons? So if there are more than ten vertices in the graph, then there is at least one pair of vertices having same color!! See it for yourself. The ten colors can be thought of as ten pigeonholes. And each vertex as a pigeon. <\/p><div class=\"result\"> <span class=\"result-word\">Example 2: <\/span> In any graph having more than one vertex, there is at least one pair of vertices having same degree. <\/div><p> This means you can't have a graph of \\(order \\geq 2\\) with all distinct degrees. Some degree will repeat for sure. See it for yourself by drawing a graph of \\(order \\geq 2\\).<\/p><p>But why does this happens? Try to come up with an explanation. You can help yourself by trying to draw a graph with all vertices having distinct degrees. <\/p><div class=\"hint\"> <span class=\"hint-word\">Hint: <\/span> Assume \\(order=n\\) and think about the range of a degree value in terms of \\(n\\). <\/div><div class=\"toggle-container\"> <span class=\"toggle-link target-hidden\">Click to see explanation<\/span> <div class=\"toggle-content\"> <p> Assume our graph has \\(order=n\\). A vertex can be connected to a maximum of \\(n-1\\) other vertices. So \\(0 \\leq deg(v_i) \\leq n-1\\). <\/p><p> It appears that for our \\(n\\) vertices, there are \\(n\\) choices for degree (from \\(0\\) to \\(n-1\\)). So, if we treat distinct degrees as pigeonholes and the vertices as pigeons, shouldn't \\(n\\) disctinct degrees should be possible then? <\/p><p> No. Our further observations reveal why. <\/p><p> Notice that in a graph of order \\(n\\), vertices with degrees \\(0\\) and \\(n-1\\) cannot exist simultaneously. <\/p><p> If there exists a vertex with degree \\(0\\), it means that this vertex is not connected to any other vertex. Hence, a vertex cannot be connected to all the \\(n-1\\) other vertices. So we get \\(0 \\leq deg(v_i) \\leq n-2\\) in this case. <\/p><p> If there exists a vertex with degree \\(n-1\\), then this vertex is connected to all \\(n-1\\) other vertices. Therefore, there cannot be an isolated vertex. So we get \\(1 \\leq deg(v_i) \\leq n-1\\) in this case. <\/p><p> In both the above cases, we have \\(n\\) vertices (pigeons) but only \\(n-1\\) possible degrees (pigeonholes). So we're assured to have a pigeonhole (degree) with more than one pigeon (vertex). <\/p><\/div><\/div>",
+		"theory-content":		"<p> Pigeonhole principle is very simple and intuitive, but its applications in discrete mathematics are surprisingly frequent. <\/p><div class=\"result\"> <span class=\"result-word\">Pigeonhole Principle: <\/span> If we put \\(n\\) pigeons in less than \\(n\\) pigeonholes, then at least one pigeonhole contains more than one pigeons. <\/div><p> You can replace <i>pigeons<\/i> by <i>items<\/i> and <i>pigeonholes<\/i> by <i>boxes<\/i>. So the principle says that if we have more items and less boxes, and we distribute all the items in these boxes, then at least one box will have more than one items. <\/p><p> The hard part is to apply this theorem. You will have to decide what objects represent your pigeons and pigeonholes. <\/p><p> <b>Example 1: <\/b> Did you notice that there are only ten different colors of vertices in these lessons? So if there are more than ten vertices in the graph, then there is at least one pair of vertices having same color!! See it for yourself. The ten colors can be thought of as ten pigeonholes. And each vertex as a pigeon. <\/p><div class=\"result\"> <span class=\"result-word\">Example 2: <\/span> In any graph having more than one vertex, there is at least one pair of vertices having same degree. <\/div><p> This means you can't have a graph of \\(order \\geq 2\\) with all distinct degrees. Some degree will repeat for sure. See it for yourself by drawing a graph of \\(order \\geq 2\\).<\/p><p>But why does this happens? Try to come up with an explanation. You can help yourself by trying to draw a graph with all vertices having distinct degrees. <\/p><div class=\"hint\"> <span class=\"hint-word\">Hint: <\/span> Assume \\(order=n\\) and think about the range of a degree value in terms of \\(n\\). <\/div><div class=\"toggle-container\"> <span class=\"toggle-link target-hidden\">Click to see explanation<\/span> <div class=\"toggle-content\"> <p> Assume our graph has \\(order=n\\). A vertex can be connected to a maximum of \\(n-1\\) other vertices. So \\(0 \\leq deg(v_i) \\leq n-1\\). <\/p><p> It appears that for our \\(n\\) vertices, there are \\(n\\) choices for degree (from \\(0\\) to \\(n-1\\)). So, if we treat distinct degrees as pigeonholes and the vertices as pigeons, shouldn't \\(n\\) disctinct degrees should be possible then? <\/p><p> No. Our further observations reveal why. <\/p><p> Notice that in a graph of order \\(n\\), vertices with degrees \\(0\\) and \\(n-1\\) cannot exist simultaneously. <\/p><p> If there exists a vertex with degree \\(0\\), it means that this vertex is not connected to any other vertex. Hence, a vertex cannot be connected to all the \\(n-1\\) other vertices. So we get \\(0 \\leq deg(v_i) \\leq n-2\\) in this case. <\/p><p> If there exists a vertex with degree \\(n-1\\), then this vertex is connected to all \\(n-1\\) other vertices. Therefore, there cannot be an isolated vertex. So we get \\(1 \\leq deg(v_i) \\leq n-1\\) in this case. <\/p><p> In both the above cases, we have \\(n\\) vertices (pigeons) but only \\(n-1\\) possible degrees (pigeonholes). So we're assured to have a pigeonhole (degree) with more than one pigeon (vertex). <\/p><\/div><\/div>",
 
 		"interface-title":		"App interface:",
 
@@ -143,7 +143,7 @@ var contentData =
 		"prev":		"?havel-hakimi",
 		"next":		"?regular-graph",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -164,7 +164,7 @@ var contentData =
 		"prev":		"?pigeonhole",
 		"next":		"?complete-graph",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -185,7 +185,7 @@ var contentData =
 		"prev":		"?regular-graph",
 		"next":		"?bipartite",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -206,7 +206,7 @@ var contentData =
 		"prev":		"?complete-graph",
 		"next":		"?complete-bipartite",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -227,7 +227,7 @@ var contentData =
 		"prev":		"?bipartite",
 		"next":		"?walk",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -248,7 +248,7 @@ var contentData =
 		"prev":		"?complete-bipartite",
 		"next":		"?open-vs-closed",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -256,7 +256,7 @@ var contentData =
 
 		"content-title": "Open vs Closed Walks",
 
-		"theory-content":		"<p>This lesson describes some special types of walks. Get acquainted with them and play around. But note that the following terminology may differ from your textbook.<\/p><p>A walk is said to be <b>open<\/b> if the first and the last vertices are different i.e. the terminal vertices are different.<\/p><p>A walk is said to be <b>closed<\/b> if the first and last vertices are the same. That means you start walking at a vertex and end up at the same.<\/p><p>Before proceeding further, try drawing open and closed walks to understand them better. Below are some more terms you need to know.<\/p><p><b>Trail<\/b> is an open walk where vertices can repeat, but not edges.<\/p><p><b>Path<\/b> is an open walk with no repetition of vertices and edges.<\/p><p>If you make a trail (or path) closed by coinciding the terminal vertices, then what you end up with is called a circuit (or cycle).<\/p><p><b>Circuit<\/b> is a closed walk where vertices can repeat, but not edges. But since it is closed, only the first\/last vertex repeats.<\/p><p><b>Cycle<\/b> is a closed walk where neither vertices nor edges can repeat. But since it is closed, only the first\/last vertex repeats.<\/p><p>It is easy to confuse these terms with each other. So play around till you get comfortable. Remember that you won't be able to repeat edges in the app.<\/p><div class=\"note\"> <span class=\"note-word\">Note: <\/span> A path is a special type of trail where vertices don't repeat. Similarly, a cycle is a special type of circuit. <\/div>",
+		"theory-content":		"<p>This lesson describes some special types of walks. Get acquainted with them and play around. But note that the following terminology may differ from your textbook.<\/p><p>A walk is said to be <b>open<\/b> if the first and the last vertices are different i.e. the terminal vertices are different.<\/p><p>A walk is said to be <b>closed<\/b> if the first and last vertices are the same. That means you start walking at a vertex and end up at the same.<\/p><p>Before proceeding further, try drawing open and closed walks to understand them better. Below are some more terms you need to know.<\/p><p><b>Trail<\/b> is an open walk where vertices can repeat, but not edges.<\/p><p><b>Path<\/b> is an open walk with no repetition of vertices and edges.<\/p><p>If you make a trail (or path) closed by coinciding the terminal vertices, then what you end up with is called a circuit (or cycle).<\/p><p><b>Circuit<\/b> is a closed walk where vertices can repeat, but not edges.<\/p><p><b>Cycle<\/b> is a closed walk where neither vertices nor edges can repeat. But since it is closed, the first and the last vertices are the same (one repetition).<\/p><p>It is easy to confuse these terms with each other. So play around till you get comfortable. Remember that you won't be able to repeat edges in the app.<\/p><div class=\"note\"> <span class=\"note-word\">Note: <\/span> A path is a special type of trail where vertices don't repeat. Similarly, a cycle is a special type of circuit. <\/div>",
 
 		"interface-title":		"App interface:",
 
@@ -269,7 +269,7 @@ var contentData =
 		"prev":		"?walk",
 		"next":		"?connectivity",
 		"script":	"app.js",
-		"star":	"y",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -290,7 +290,7 @@ var contentData =
 		"prev":		"?open-vs-closed",
 		"next":		"?eulerian-circuit",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"n",
 		"style":	"app.css"
 	},
 
@@ -311,7 +311,7 @@ var contentData =
 		"prev":		"?connectivity",
 		"next":		"?eulerian-trail",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"y",
 		"style":	"app.css"
 	},
 
@@ -330,11 +330,136 @@ var contentData =
 		"svg-output": "<div class=\"text-center\"> <ul class=\"pagination\" id=\"prob-list\"> <li><a class=\"prob-current\">1<\/a><\/li><li><a>2<\/a><\/li><li><a>3<\/a><\/li><li><a>4<\/a><\/li><li><a>5<\/a><\/li><\/ul> <\/div>",
 
 		"prev":		"?eulerian-circuit",
+		"next":		"?graph-coloring",
+		"script":	"app.js",
+		"star":		"y",
+		"style":	"app.css"
+	},
+
+	"graph-coloring": {
+
+		"content-title": "Graph Coloring",
+
+		"theory-content":		"<p><b>Graph coloring<\/b> is the assignment of colors to each vertex in a graph such that no two adjacent vertices get the same color.<\/p><p>Sometimes, this is also referred to as <b>proper coloring<\/b> of graph.<\/p><p>You can change color of a vertex by left-clicking on it. In this unit you have 10 colors available for each vertex.<\/p><p>Try your hands on the graph and see it for yourself!<\/p>",
+
+		"interface-title":		"App interface:",
+
+		"interface-content":		"<ul><li>To change <span style=\"color:#fff; background-color:#d62728; padding:0 2px;\">color<\/span> of a vertex <b>left click<\/b> on it.<\/li><li>To add a vertex <b>left click<\/b> on whitespace.<\/li><li>To add an edge <b>drag<\/b> from one vertex to another.<\/li><li>To delete a vertex\/edge <b>right click<\/b> on it.<\/li><li>To move a vertex <b>hold Ctrl and drag<\/b> it.<\/li><li>To see name of a vertex\/edge just <b>hover your cursor<\/b> on it.<\/li><\/ul>",
+
+		"svg-buttons":		"<button type=\"button\" id=\"clear-graph\" class=\"btn btn-default\">Clear All<\/button>",
+
+		"svg-output": "",
+
+		"prev":		"?eulerian-trail",
+		"next":		"?k-colorable",
+		"script":	"app.js",
+		"star":		"n",
+		"style":	"app.css"
+	},
+
+	"k-colorable": {
+
+		"content-title": "k-Colorable Graph",
+
+		"theory-content":		"<p>A graph is said to be \\(k\\mbox{-}\\)<b>colorable<\/b> if it can be properly colored using \\(k\\) colors.<\/p><p>For example, a <a href=\"?bipartite\">bipartite graph<\/a> is \\(2\\mbox{-}\\)colorable. To see this, just assign two different colors to the two disjoint sets in a bipartite graph.<\/p><p>Conversely, if a graph is \\(2\\mbox{-}\\)colorable, then the vertices having same color can be taken as disjoint sets. Hence, we arrive at the following result:<\/p><div class=\"result\"><span class=\"result-word\">Theorem: <\/span>A graph is bipartite if and only if it is \\(2\\mbox{-}\\)colorable.<\/div><p>Now, consider a graph that is \\(k\\mbox{-}\\)colored. Choose any one vertex of the graph and replace it's color by a new \\(\\left(k+1\\right)\\)<sup>th<\/sup> color. Clearly, the graph is still properly colored.<\/p><div class=\"note\"><span class=\"note-word\">Note: <\/span>If a graph is \\(k\\mbox{-}\\)colorable, then it is also \\(\\left(k+n\\right)\\mbox{-}\\)colorable, \\(n \\geq 1\\).<\/div><p>Another thing worth noticing is that a graph is \\(1\\mbox{-}\\)colorable if and only if it is totally disconnected, that is all its vertices are isolated.<\/p><p>In each of the following excercises, you're given a graph and a limited number of colors. Your task is to color the graphs (properly). Try to <b>minimize<\/b> the number of colors you use.<\/p>",
+
+		"interface-title":		"App interface:",
+
+		"interface-content":		"<ul><li>To change <span style=\"color:#fff; background-color:#d62728; padding:0 2px;\">color<\/span> of a vertex <b>left click<\/b> on it.<\/li><li>To move a vertex <b>hold Ctrl and drag<\/b> it.<\/li><li>To see name of a vertex\/edge just <b>hover your cursor<\/b> on it.<\/li><\/ul>",
+
+		"svg-buttons":		"<button type=\"button\" id=\"prev-prob\" class=\"btn btn-default\">Prev<\/button> <button type=\"button\" id=\"next-prob\" class=\"btn btn-default\">Next<\/button>",
+
+		"svg-output": "<div id=\"output-text\"><\/div><div class=\"text-center\"> <ul class=\"pagination\" id=\"prob-list\"> <li><a class=\"prob-current\">1<\/a><\/li><li><a>2<\/a><\/li><li><a>3<\/a><\/li><li><a>4<\/a><\/li><li><a>5<\/a><\/li><li><a>6<\/a><\/li><li><a>7<\/a><\/li><li><a>8<\/a><\/li><li><a>9<\/a><\/li><li><a>10<\/a><\/li><\/ul> <\/div>",
+
+		"prev":		"?graph-coloring",
+		"next":		"?chromatic-number",
+		"script":	"app.js",
+		"star":		"y",
+		"style":	"app.css"
+	},
+
+	"chromatic-number": {
+
+		"content-title": "Chromatic Number",
+
+		"theory-content":		"<p><b>Chromatic number<\/b> of a graph is the minimum value of \\(k\\) for which the graph is \\(k\\mbox{-}colorable\\).<\/p><p>In other words, it is the minimum number of colors needed for a proper-coloring of the graph.<\/p><p>Chromatic number of a graph \\(G\\) is denoted by \\(\\chi(G)\\). And a graph with \\(\\chi(G)=k\\) is called a <b>\\(k\\mbox{-}\\)chromatic<\/b> graph.<\/p><p>You might have noticed in the previous chapter (on <a href=\"?k-colorable\">k-Colorable Graphs<\/a>) that some of the problems involved chromatic coloring.<\/p><p>Now we take a look at some common types of graph and their chromatic numbers.<\/p><p><b><a href=\"javascript:setGraph(0);\">Empty Graph<\/a>:<\/b> It's a graph without any edges (\\(|E|=0\\)). All the vertices are isolated. \\(\\chi(G)=1\\). Note that an empty graph is also <a href=\"?bipartite\">bipartite<\/a>.<\/p><p><b><a href=\"javascript:setGraph(1);\">Bipartite Graph<\/a>:<\/b> An empty bipartite graph has \\(\\chi(G)=1\\). A non-empty bipartite graph has \\(\\chi(G)=2\\). Using this, we arrive at the following result.<\/p><div class=\"result\"><span class=\"result-word\">Theorem:<\/span> A graph \\(G\\) is bipartite if and only if \\(\\chi(G)\\leq2\\).<br><br><p>This can be easily established by observing that any graph with \\(\\chi(G)\\leq2\\) is \\(2\\mbox{-}\\)colorable, and hence bipartite. The converse, has already been established earlier.<\/p><\/div><p><b><a href=\"javascript:setGraph(2);\">Star Graph<\/a>:<\/b> A star graph of order \\(n+1\\), denoted by \\(S_{n+1}\\), is the complete bipartite graph \\(K_{1,n}\\), where \\(n\\geq0\\). So, it has same chromatic number as a bipartite graph.<\/p><p><b><a href=\"javascript:setGraph(3);\">Cycle graph<\/a>:<\/b> A cycle graph of order \\(n\\) is denoted by \\(C_n\\). A cycle of odd order has \\(\\chi(C_{2n+1})=3\\), and that of even order has \\(\\chi(C_{2n})=2\\). So, a cycle of even order is also bipartite.<\/p><p><b><a href=\"javascript:setGraph(5);\">Wheel graph<\/a>:<\/b> A wheel graph of order \\(n+1\\) is obtained from \\(C_n\\) by connecting all its vertices to a new vertex (called <em>hub<\/em>). Wheel graph of order \\(n\\) is denoted by \\(W_n\\). A wheel of odd order has \\(\\chi(W_{2n+1})=4\\), and that of even order has \\(\\chi(W_{2n})=3\\).<\/p><p><b><a href=\"javascript:setGraph(7);\">Complete Graph<\/a>:<\/b> Since each vertex is connected to every other vertex, we have \\(\\chi(K_n)=n\\).<\/p>",
+
+		"interface-title":		"App interface:",
+
+		"interface-content":		"<ul><li>To move a vertex <b>hold Ctrl and drag<\/b> it.<\/li><li>To see name of a vertex\/edge just <b>hover your cursor<\/b> on it.<\/li><\/ul>",
+
+		"svg-buttons":		"<button type=\"button\" id=\"prev-prob\" class=\"btn btn-default\">Prev<\/button> <button type=\"button\" id=\"next-prob\" class=\"btn btn-default\">Next<\/button>",
+
+		"svg-output": "<div id=\"output-text\"><\/div><div class=\"text-center\"> <ul class=\"pagination\" id=\"prob-list\"> <li><a class=\"prob-current\">1<\/a><\/li><li><a>2<\/a><\/li><li><a>3<\/a><\/li><li><a>4<\/a><\/li><li><a>5<\/a><\/li><li><a>6<\/a><\/li><li><a>7<\/a><\/li><li><a>8<\/a><\/li><\/ul> <\/div>",
+
+		"prev":		"?k-colorable",
+		"next":		"?trees",
+		"script":	"app.js",
+		"star":		"y",
+		"style":	"app.css"
+	},
+
+	"trees": {
+
+		"content-title": "Trees",
+
+		"theory-content":		"<p>It's time to learn about trees. Trees are special type of graphs which have immense application as a data structure in computational sciences.<\/p><p>But first, we talk about forests.<\/p><p>A <b>forest<\/b> is an acyclic graph, that is a graph without any cycles. It can be a single connected graph or have multiple disconnected components. When its a single connected graph, we call it a tree.<\/p><p>So, a <b>tree<\/b> is a connected acyclic graph. And a forest is just a collection of one or more trees.<\/p><p>Play around to see what is a tree and what is not. And try to observe the following properties as you draw things.<\/p><div class=\"result\"><span class=\"result-word\">Theorem:<\/span> A connected graph is a tree iff its order is one more than its size. In mathematical notation, we can write this as \\[|V|=|E|+1\\]<p>Note that statement is biconditional. So it also says that a connected graph satisfying the above equation is a tree.<\/p><\/div><div class=\"result\"><span class=\"result-word\">Property:<\/span> For a tree with more than one vertices, there is a <b>unique path<\/b> between any two of its vertices.<\/div><div class=\"result\"><span class=\"result-word\">Property:<\/span> A tree is <b>minimally connected<\/b>, which means that removal of any arbitrary edge from it will convert it into a disconnected graph.<\/div>",
+
+		"interface-title":		"App interface:",
+
+		"interface-content":		"<ul><li>To add a vertex <b>left click<\/b> on whitespace.<\/li><li>To add an edge <b>drag<\/b> from one vertex to another.<\/li><li>To delete a vertex\/edge <b>right click<\/b> on it.<\/li><li>To move a vertex <b>hold Ctrl and drag<\/b> it.<\/li><li>To see name of a vertex\/edge just <b>hover your cursor<\/b> on it.<\/li><\/ul>",
+
+		"svg-buttons":		"<button type=\"button\" id=\"clear-graph\" class=\"btn btn-default\">Clear All<\/button>",
+
+		"svg-output": "",
+
+		"prev":		"?chromatic-number",
+		"next":		"?rooted-trees",
+		"script":	"app.js",
+		"star":		"n",
+		"style":	"app.css"
+	},
+
+	"rooted-trees": {
+
+		"content-title": "Rooted Trees",
+
+		"theory-content":		"<p>A <b>rooted tree<\/b> is a tree with a special vertex labelled as the \"root\" the of tree.<\/p><p>The root serves as a point of reference for other vertices in the tree. In diagrams, we usually keep the root at the top and list other vertices below it.<\/p><p>This notion is particularly useful in computer science for working with tree-based data structures.<\/p><p>In the figure, the root vertex is shown with a black border.<\/p><p>Below are some useful terms associated with rooted trees.<\/p><p><b>Branch<\/b> is just another name given to edges of the tree.<\/p><p><b>Depth of a vertex<\/b> is the number of branches in the path from root to the vertex. So depth of the root itself is zero.<\/p><p><b>Level of a vertex<\/b> is number of vertex in the path from root to the vertex. This is just one more than the depth of the vertex. Level of root is 1.<\/p><p><b>Child of a vertex \\(v_1\\)<\/b> is any vertex \\(v_2\\) connected to it such that \\(d(v_2)=d(v_1)+1\\), where \\(d(v)\\) denotes depth of vertex \\(v\\). \\(v_1\\) is called <b>parent<\/b> of \\(v_2\\). Usually, in diagrams, we keep the parent vertex above its child vertices.<\/p><div class=\"note\"><span class=\"note-word\">Note:<\/span> There can be multiple childs of a vertex, but parent of a vertex is unique. Root is the only vertex in a tree without any parent.<\/div><p>A <b>leaf<\/b> is a vertex without any child.<\/p><p><b>Height of tree<\/b> is the maximum value of depth for any vertex in the tree.<\/p><p>Play around to get yourself familiar with these terms. By the way, did you notice something about the colors?<\/p><div class=\"result\"><p><span class=\"result-word\">Theorem:<\/span> All tree graphs are bipartite.<\/p><p>This can be easily seen by coloring all the vertices at even depth in a color, say pink, and coloring the vertices at odd depth in another color, say cyan. So, any tree is 2-colorable.<\/p><\/div>",
+
+		"interface-title":		"App interface:",
+
+		"interface-content":		"<ul><li>To add a child to a vertex <b>left click<\/b> on it.<\/li><li>To delete a non-root vertex and all its descendents <b>right click<\/b> on it.<\/li><li>To move a vertex <b>hold Ctrl and drag<\/b> it.<\/li><li>To see details of vertex\/edge just <b>hover your cursor<\/b> on it.<\/li><\/ul>",
+
+		"svg-buttons":		"<button type=\"button\" id=\"clear-graph\" class=\"btn btn-default\">Clear Graph<\/button>",
+
+		"svg-output": "",
+
+		"prev":		"?trees",
+		"next":		"?spanning-tree",
+		"script":	"app.js",
+		"star":		"n",
+		"style":	"app.css"
+	},
+
+	"spanning-tree": {
+
+		"content-title": "Spanning Tree of a Graph",
+
+		"theory-content":		"<p><b>Spanning tree<\/b> of a graph is a subgraph of it which forms a tree and contains (or spans) all the vertices of the graph.<\/p><p>So if the given graph \\(G\\) has \\(n\\) vertices, we're looking for a subgraph of \\(G\\) which<\/p><ul> <li>has \\(n\\) vertices<\/li><li>has \\(n-1\\) edges<\/li><li>is connected<\/li><\/ul> <div class=\"note\"> <span class=\"note-word\">Note:<\/span> The graph itself must be connected in order to obtain its spanning tree. <\/div><p>So if the graph is connected, we just need to delete some of its edges so that there is no cycle and it remains connected.<\/p><p>In these excercises, your aim is to reduce the number of edges to \\(n-1\\) while keeping the graph connected.<\/p><p>On solving the problems, you will realize that spanning tree of a graph isn't unique.<\/p>",
+
+		"interface-title":		"App interface:",
+
+		"interface-content":		"<ul><li>To delete an edge <b>right click<\/b> on it.<\/li><\/ul>",
+
+		"svg-buttons":		"<button type=\"button\" id=\"prev-prob\" class=\"btn btn-default\">Prev<\/button><button type=\"button\" id=\"next-prob\" class=\"btn btn-default\">Next<\/button>",
+
+		"svg-output": "<div id=\"output-text\"><\/div><div class=\"text-center\"><ul class=\"pagination\" id=\"prob-list\"><li><a>1<\/a><\/li><li><a>2<\/a><\/li><li><a>3<\/a><\/li><li><a>4<\/a><\/li><\/ul><\/div>",
+
+		"prev":		"?rooted-trees",
 		"next":		"",
 		"script":	"app.js",
-		"star":	"n",
+		"star":		"y",
 		"style":	"app.css"
 	}
 
 };
-
